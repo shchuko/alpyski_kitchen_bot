@@ -1,2 +1,2 @@
-worker: ./run.sh 
+worker: python src/bot.py
 

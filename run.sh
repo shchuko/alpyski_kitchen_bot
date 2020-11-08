@@ -1,6 +1,5 @@
 #!/bin/bash
 
-./build.sh
 
-python src/bot.py
+python3 src/bot.py
 

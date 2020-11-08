@@ -12,21 +12,23 @@ import time
 import schedule
 import datetime
 import random
+import os
 from datetime import timedelta
 
 import telebot
 from telebot import apihelper
 
-import botconfig as bcf
 import botmessages as bmsg
 
 
-bot = telebot.TeleBot(bcf.main_config['token'])
+token = os.getenv("TOKEN")
+chat_id = os.getenv("CHAT_ID")
+
+bot = telebot.TeleBot(token)
 
 fixed_date = datetime.datetime(2019, 4, 10)
 room_list = ['1001', '1002', '1003', '1004', '1005', '1006', '1007', '1008', '1009', '1010', '1011',
              '1012', '1013', '1014', '1015', '1016', '1017', '1018', '1019', '1020', '1021', '1022', '1023']
-
 
 
 def clean_reminder():
@@ -41,8 +43,8 @@ def clean_reminder():
     
     message += bmsg.clean_hashtag
     
-    message_info = bot.send_message(bcf.main_config['chat_id'], message)
-    bot.pin_chat_message(bcf.main_config['chat_id'], message_info.message_id)
+    message_info = bot.send_message(chat_id, message)
+    bot.pin_chat_message(chat_id, message_info.message_id)
 
 
 def debug_message():
@@ -56,10 +58,10 @@ def debug_message():
         message += bmsg.clean_body.format('Weekday', room_first, room_second)
     
     message += bmsg.clean_hashtag
-    message_info = bot.send_message(bcf.main_config['chat_id'], message)
+    message_info = bot.send_message(chat_id, message)
 
 def send_start_msg():
-    bot.send_message(bcf.main_config['chat_id'], bmsg.start)
+    bot.send_message(chat_id, bmsg.start)
     #debug_message()
     clean_reminder()
 

@@ -1,8 +1,8 @@
 # A bot helps you not to forget clean the kitchen!
 
-It's an open-source part of bot sources used as submodule of the private repo with access token
- 
 Based on [pyTelegramBotAPI](https://github.com/eternnoir/pyTelegramBotAPI#pytelegrambotapi)
+
+Submodule initialization is NOT reqired
 
 # Dependicies: 
 
@@ -21,16 +21,10 @@ Based on [pyTelegramBotAPI](https://github.com/eternnoir/pyTelegramBotAPI#pytele
 * datetime 
 
 
-#### "botconfig.py" file configuration example
+To run bot set the environment variables:
 
-```py
-# /src/botconfig.py example
-import preprocessing
-
-
-main_config = {
-    'token' : 'your_bot_token',
-    'chat_id' : '-1001412969097'
-    }
+```bash
+export TOKEN="<access_token>"
+export CHAT_ID="<chat_id>"
 ```
 
