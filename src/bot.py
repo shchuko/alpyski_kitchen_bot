@@ -21,8 +21,8 @@ from telebot import apihelper
 import botmessages as bmsg
 
 
-token = os.getenv("TOKEN")
-chat_id = os.getenv("CHAT_ID")
+token = os.environ['TOKEN']
+chat_id = os.environ['CHAT_ID']
 
 bot = telebot.TeleBot(token)
 
