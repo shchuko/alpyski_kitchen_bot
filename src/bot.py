@@ -20,9 +20,11 @@ from telebot import apihelper
 
 import botmessages as bmsg
 
+print('Hello, I\'m alive')
 
 token = os.environ['TOKEN']
 chat_id = os.environ['CHAT_ID']
+print('Env vars reading successful')
 
 bot = telebot.TeleBot(token)
 
