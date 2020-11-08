@@ -2,7 +2,6 @@
 
 Based on [pyTelegramBotAPI](https://github.com/eternnoir/pyTelegramBotAPI#pytelegrambotapi)
 
-Submodule initialization is NOT reqired
 
 # Dependicies: 
 
