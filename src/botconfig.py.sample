@@ -1,0 +1,10 @@
+# - coding: utf-8 -
+
+import preprocessing
+
+
+main_config = {
+    'token' : '<token>',
+    'chat_id' : '<chat_id>'
+    }
+

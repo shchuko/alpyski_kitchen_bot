@@ -1,0 +1,5 @@
+build:
+  command: ./build.sh
+run:
+  worker: python src/bot.py
+

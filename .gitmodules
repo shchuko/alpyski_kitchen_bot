@@ -1,0 +1,3 @@
+[submodule "private"]
+	path = private
+	url = https://github.com/shchuko/alpyski_kitchen_bot_private.git
