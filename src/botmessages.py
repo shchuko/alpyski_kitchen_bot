@@ -5,7 +5,7 @@ start = 'Я родился!\n'
 clean_hashtag = '#cleaning'
 
 clean_headers = [
-                        'Cmon slow hands, Clean the Dirty Kitchen!',
+                        'Cmon slow hands, Clean the Dirty Kitchen!\n',
                         'Do you want Satar to play Violin for you to make you realize you need to clean? No? Go Clean!\n',
                         'Don\'t make Jazib come to your room and knock with the butcher\'s knife, Go Clean!\n',
                         'You Know what is better than a dirty Kitchen? A clean God Damn Kitchen!! Clean Up!\n',
