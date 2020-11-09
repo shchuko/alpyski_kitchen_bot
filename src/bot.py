@@ -29,8 +29,8 @@ chat_id = os.environ['CHAT_ID']
 bot = telebot.TeleBot(token)
 
 fixed_date = datetime.datetime(2019, 4, 10)
-room_list = ['1001', '1002', '1003', '1004', '1005', '1006', '1007', '1008', '1009', '1010', '1011',
-             '1012', '1013', '1014', '1015', '1016', '1017', '1018', '1019', '1020', '1021', '1022', '1023']
+room_list_1 = ['1001', '1002', '1003', '1004', '1005', '1006', '1007', '1008', '1009', '1010', '1011']
+room_list_2 = ['1012', '1013', '1014', '1015', '1016', '1017', '1018', '1019', '1020', '1021', '1022', '1023']
 
 
 def clean_reminder():
@@ -38,8 +38,8 @@ def clean_reminder():
     
     day_date = datetime.datetime.today()
     for i in range(7):
-        room_first = room_list[(day_date - fixed_date).days % 11]
-        room_second = room_list[(day_date - fixed_date).days % 12 + 11]
+        room_first = room_list_1[(day_date - fixed_date).days % 11]
+        room_second = room_list_2[(day_date - fixed_date).days % 12]
         message += bmsg.clean_body.format(day_date.strftime("%A"), room_first, room_second)
         day_date += timedelta(days=1)
     
