@@ -39,7 +39,7 @@ def clean_reminder():
     day_date = datetime.datetime.today()
     for i in range(7):
         room_first = room_list[(day_date - fixed_date).days % 11]
-        room_second = room_list[(day_date - fixed_date).days % 12 + 12]
+        room_second = room_list[(day_date - fixed_date).days % 12 + 11]
         message += bmsg.clean_body.format(day_date.strftime("%A"), room_first, room_second)
         day_date += timedelta(days=1)
     
