@@ -46,7 +46,7 @@ def clean_reminder():
     message += bmsg.clean_hashtag
     
     message_info = bot.send_message(chat_id, message)
-    bot.pin_chat_message(chat_id, message_info.message_id)
+    # bot.pin_chat_message(chat_id, message_info.message_id)
 
 
 def debug_message():
