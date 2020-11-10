@@ -20,11 +20,11 @@ from telebot import apihelper
 
 import botmessages as bmsg
 
-#print('Hello, I\'m alive')
+print('Hello, I\'m alive')
 
 token = os.environ['TOKEN']
 chat_id = os.environ['CHAT_ID']
-#print('Env vars reading successful')
+print('Env vars reading successful')
 
 bot = telebot.TeleBot(token)
 
@@ -71,7 +71,7 @@ def send_start_msg():
 schedule.every().monday.at('13:00').do(clean_reminder)
 
 if __name__ == '__main__':
-    send_start_msg()
+    # send_start_msg()
 
     while True:
         schedule.run_pending()
