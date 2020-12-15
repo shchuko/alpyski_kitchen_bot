@@ -1,6 +1,32 @@
 # - coding: utf-8 -
 
-start = 'Я родился!\n'
+
+start = '''Я родился!\n'''
+
+hlp = '''Good day!
+
+/help - show this help / показать это сообщение
+/links - useful links / полезные ссылки
+/faq_ru - ответы на распространенные вопросы
+/faq_en - answers for common questions
+
+For the kitchen cleaning schedule check pinned message and #cleaning hashtag
+График уборки кухни помечен хештегом #cleaning и запинен
+'''
+
+links = '''Полезные ссылки: 
+https://vk.com/alp15k2_itmo - offitial dormitory group / официальная группа ВК общежития
+https://vk.me/join/AJQ1d3osaA3DJx_eBOUYLK52 - dormitory chat / чат общежития
+https://vk.me/join/AJQ1d5mVOw1760s0FwBsj6YB - bulletin board (check its RULES!) / доска объявлений (читай ПРАВИЛА)
+'''
+
+faq_ru = '''Здесь будет ЧаВО
+
+'''
+
+faq_en = '''There will be a FAQ
+
+'''
 
 clean_hashtag = '#cleaning'
 
@@ -20,3 +46,6 @@ clean_headers = [
                     ]
 
 clean_body = '{}:\t{} and {}\n'
+
+
+
