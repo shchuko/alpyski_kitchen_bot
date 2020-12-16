@@ -39,6 +39,7 @@ class CleaningReminder:
         self.room_list_1 = ['1001', '1002', '1003', '1004', '1005', '1006', '1007', '1008', '1009', '1010', '1011']
         self.room_list_2 = ['1012', '1013', '1014', '1015', '1016', '1017', '1018', '1019', '1020', '1021', '1022', '1023']
     
+        self.pinned_message_id = None
 
     def add_remind_time(self, remind_time):
         schedule.every().monday.at(remind_time).do(self.__clean_reminder)
@@ -60,8 +61,13 @@ class CleaningReminder:
         message += bmsg.clean_hashtag
         
         message_info = self.bot.send_message(chat_id, message)
+        
+        if self.pinned_message_id is not None:
+            self.bot.unpin_chat_message(chat_id, self.pinned_message_id)
+
         self.bot.pin_chat_message(chat_id, message_info.message_id)
-    
+        self.pinned_message_id = message_info.message_id
+
 
     def __polling_loop(self): 
         while True:
