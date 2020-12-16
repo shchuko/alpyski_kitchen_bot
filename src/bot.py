@@ -52,8 +52,8 @@ class CleaningReminder:
         
         day_date = datetime.datetime.today()
         for i in range(7):
-            room_first = self.room_list_1[(day_date - self.start_date).days % 11]
-            room_second = self.room_list_2[(day_date - self.start_date).days % 12]
+            room_first = self.room_list_1[(day_date - self.start_date).days % len(self.room_list_1)]
+            room_second = self.room_list_2[(day_date - self.start_date).days % len(self.room_list_2)]
             message += bmsg.clean_body.format(day_date.strftime("%A"), room_first, room_second)
             day_date += timedelta(days=1)
         
