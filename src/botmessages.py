@@ -9,6 +9,7 @@ hlp = '''Good day!
 /links - useful links / полезные ссылки
 /faq_ru - ответы на распространенные вопросы
 /faq_en - answers for common questions
+/who_clean - today's cleaning schedule / кто убирается сегодня
 
 For the kitchen cleaning schedule check pinned message and #cleaning hashtag
 График уборки кухни помечен хештегом #cleaning и запинен
