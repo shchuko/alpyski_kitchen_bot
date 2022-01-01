@@ -44,10 +44,10 @@ class CleaningReminder:
                             '1023']
 
     def add_remind_time(self, remind_time, remind_day_of_month):
-        # 21:01 UTC == 00:01 Moscow
+        # 21:01 UTC 31.12 == 00:01 MOW 01.01
         schedule.every().day.at('21:01').do(
             lambda: self.bot.send_message(chat_id,
-                                          "Happy New Year!") if date.today().day == 1 and date.today().month == 1 else lambda: None)
+                                          "Happy New Year!") if date.today().day == 31 and date.today().month == 12 else lambda: None)
 
         schedule.every().day.at(remind_time).do(
             lambda: self.__clean_reminder() if date.today().day == remind_day_of_month else lambda: None)
