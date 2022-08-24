@@ -99,14 +99,14 @@ def handle_links(message):
     bot.reply_to(message, bmsg.links)
 
 
-@bot.message_handler(commands=['faq_ru'])
-def handle_faq_ru(message):
-    bot.reply_to(message, bmsg.faq_ru)
+#@bot.message_handler(commands=['faq_ru'])
+#def handle_faq_ru(message):
+#    bot.reply_to(message, bmsg.faq_ru)
 
 
-@bot.message_handler(commands=['faq_en'])
-def handle_faq_en(message):
-    bot.reply_to(message, bmsg.faq_en)
+#@bot.message_handler(commands=['faq_en'])
+#def handle_faq_en(message):
+#    bot.reply_to(message, bmsg.faq_en)
 
 
 @bot.message_handler(commands=['chat_id'])
