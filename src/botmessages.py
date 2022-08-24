@@ -14,9 +14,10 @@ For the kitchen cleaning schedule check pinned message and #cleaning hashtag
 '''
 
 links = '''Полезные ссылки: 
-https://vk.com/alp15k2_itmo - offitial dormitory group / официальная группа ВК общежития
-https://vk.me/join/AJQ1d3osaA3DJx_eBOUYLK52 - dormitory chat / чат общежития
-https://vk.me/join/AJQ1d5mVOw1760s0FwBsj6YB - bulletin board (check its RULES!) / доска объявлений (читай ПРАВИЛА)
+https://vk.com/alp15k2_itmo - offitial dormitory VK group / официальная группа ВК общежития
+https://t.me/joinchat/SHzrdnL-wPKBAIYZ - offitial Telegram channel / официальный канал в Телеграм
+https://vk.me/join/AJQ1d3osaA3DJx_eBOUYLK52 - dormitory VK chat / чат общежития ВК
+https://vk.me/join/AJQ1d5mVOw1760s0FwBsj6YB - VK bulletin board (check its RULES!) / доска объявлений ВК (читай ПРАВИЛА)
 '''
 
 faq_ru = '''Здесь будет ЧаВО
