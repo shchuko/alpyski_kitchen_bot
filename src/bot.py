@@ -47,6 +47,13 @@ class HealthCheck(BaseHTTPRequestHandler):
             self.end_headers()
             self.wfile.write(b'OK')
 
+    def do_OPTIONS(self):
+        if self.path == '/health':
+            self.send_response(200)
+            self.send_header('Allow', 'OPTIONS, GET')
+            self.send_header('Content-type', 'text/plain')
+            self.end_headers()
+
 
 class CleaningReminder:
     def __init__(self, token, chat_id, start_date):
