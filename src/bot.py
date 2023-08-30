@@ -17,19 +17,35 @@ import threading
 from datetime import timedelta
 from datetime import date
 from calendar import monthrange
+from http.server import BaseHTTPRequestHandler, HTTPServer
 
 import telebot
 from telebot.apihelper import ApiTelegramException
 
 import botmessages as bmsg
 
+os.environ['TZ'] = 'Europe/Moscow'
+time.tzset()
+
 print('I\'m alive!')
+print(f'Date: {time.strftime("%H:%M %d-%m-%Y")}')
+
 token = os.environ['TOKEN']
 chat_id = os.environ['CHAT_ID']
 print('Env vars reading successful')
 
 fixed_date = datetime.datetime(2019, 4, 10)
 bot = telebot.TeleBot(token)
+
+
+# noinspection PyPep8Naming
+class HealthCheck(BaseHTTPRequestHandler):
+    def do_GET(self):
+        if self.path == '/health':
+            self.send_response(200)
+            self.send_header('Content-type', 'text/plain')
+            self.end_headers()
+            self.wfile.write(b'OK')
 
 
 class CleaningReminder:
@@ -44,10 +60,9 @@ class CleaningReminder:
                             '1023']
 
     def add_remind_time(self, remind_time, remind_day_of_month):
-        # 21:01 UTC 31.12 == 00:01 MOW 01.01
-        schedule.every().day.at('21:01').do(
+        schedule.every().day.at('00:00').do(
             lambda: self.bot.send_message(chat_id,
-                                          "Happy New Year!") if date.today().day == 31 and date.today().month == 12 else lambda: None)
+                                          "Happy New Year!") if date.today().day == 1 and date.today().month == 1 else lambda: None)
 
         schedule.every().day.at(remind_time).do(
             lambda: self.__clean_reminder() if date.today().day == remind_day_of_month else lambda: None)
@@ -129,9 +144,17 @@ def handle_joinchat(message):
     bot.reply_to(message, bmsg.hlp)
 
 
+def run_health_check_server(server_class=HTTPServer, handler_class=HealthCheck):
+    server_address = ('', 8080)
+    httpd = server_class(server_address, handler_class)
+    print('Starting httpd on port 8080...')
+    httpd.serve_forever()
+
+
 if __name__ == '__main__':
     reminder = CleaningReminder(token, chat_id, fixed_date)
     reminder.add_remind_time('13:00', 1)
     reminder.polling()
 
+    run_health_check_server()
     bot.polling()
