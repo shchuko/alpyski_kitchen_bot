@@ -15,12 +15,19 @@ For the kitchen cleaning schedule check pinned message and #cleaning hashtag
 Contribute: https://github.com/shchuko/alpyski_kitchen_bot
 '''
 
-links = '''Полезные ссылки: 
-https://vk.com/alp15k2_itmo - offitial dormitory VK group / официальная группа ВК общежития
-https://t.me/joinchat/SHzrdnL-wPKBAIYZ - offitial Telegram channel / официальный канал в Телеграм
-https://vk.me/join/AJQ1d3osaA3DJx_eBOUYLK52 - dormitory VK chat / чат общежития ВК
-https://vk.me/join/AJQ1d5mVOw1760s0FwBsj6YB - VK bulletin board (check its RULES!) / доска объявлений ВК (читай ПРАВИЛА)
-https://github.com/shchuko/alpyski_kitchen_bot - bot sources / исходники бота
+links = '''Полезные ссылки:
+ 
+Dormitory VK group | Группа ВК общежития
+https://vk.com/alp15k2_itmo 
+
+Dormitory Telegram channel | Телеграм-канал общежития
+https://t.me/joinchat/SHzrdnL-wPKBAIYZ 
+
+Dormitory chat / Чат общежития
+https://vk.me/join/AJQ1d3osaA3DJx_eBOUYLK52
+
+Bulletin board / Доска объявлений
+https://vk.me/join/AJQ1d5mVOw1760s0FwBsj6YB 
 '''
 
 faq_ru = '''Здесь будет ЧаВО
