@@ -17,7 +17,6 @@ import threading
 from datetime import timedelta
 from datetime import date
 from calendar import monthrange
-from http.server import BaseHTTPRequestHandler, HTTPServer
 
 import telebot
 from telebot.apihelper import ApiTelegramException
@@ -36,23 +35,6 @@ print('Env vars reading successful')
 
 fixed_date = datetime.datetime(2019, 4, 10)
 bot = telebot.TeleBot(token)
-
-
-# noinspection PyPep8Naming
-class HealthCheck(BaseHTTPRequestHandler):
-    def do_GET(self):
-        if self.path == '/health':
-            self.send_response(200)
-            self.send_header('Content-type', 'text/plain')
-            self.end_headers()
-            self.wfile.write(b'OK')
-
-    def do_OPTIONS(self):
-        if self.path == '/health':
-            self.send_response(200)
-            self.send_header('Allow', 'OPTIONS, GET')
-            self.send_header('Content-type', 'text/plain')
-            self.end_headers()
 
 
 class CleaningReminder:
@@ -151,22 +133,11 @@ def handle_joinchat(message):
     bot.reply_to(message, bmsg.hlp, disable_web_page_preview=True)
 
 
-def run_health_check_server():
-    server_address = ('', 8080)
-    httpd = HTTPServer(server_address, HealthCheck)
-
-    thread = threading.Thread(target=lambda : httpd.serve_forever())
-    thread.start()
-
-
 if __name__ == '__main__':
     reminder = CleaningReminder(token, chat_id, fixed_date)
     reminder.add_remind_time('13:00', 1)
     print('Starting reminder thread...')
     reminder.polling()
-
-    print('Starting healthcheck thread...')
-    run_health_check_server()
 
     print('Starting bot.polling()')
     bot.polling()
