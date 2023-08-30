@@ -108,17 +108,17 @@ class CleaningReminder:
 
 @bot.message_handler(commands=['start'])
 def handle_start(message):
-    bot.reply_to(message, bmsg.start + bmsg.hlp)
+    bot.reply_to(message, bmsg.start + bmsg.hlp, disable_web_page_preview=True)
 
 
 @bot.message_handler(commands=['help'])
 def handle_help(message):
-    bot.reply_to(message, bmsg.hlp)
+    bot.reply_to(message, bmsg.hlp, disable_web_page_preview=True)
 
 
 @bot.message_handler(commands=['links'])
 def handle_links(message):
-    bot.reply_to(message, bmsg.links)
+    bot.reply_to(message, bmsg.links, disable_web_page_preview=True)
 
 
 #@bot.message_handler(commands=['faq_ru'])
@@ -148,7 +148,7 @@ def handle_who_clean(message):
 
 @bot.message_handler(content_types=["new_chat_members"])
 def handle_joinchat(message):
-    bot.reply_to(message, bmsg.hlp)
+    bot.reply_to(message, bmsg.hlp, disable_web_page_preview=True)
 
 
 def run_health_check_server():
