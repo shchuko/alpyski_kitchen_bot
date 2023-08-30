@@ -7,13 +7,15 @@ Email: yaroshchuk2000@gmail.com
 Website: github.com/shchuko
 
 """
-
+import sys
 import time
 import schedule
 import datetime
 import random
 import os
 import threading
+import signal
+
 from datetime import timedelta
 from datetime import date
 from calendar import monthrange
@@ -134,6 +136,8 @@ def handle_joinchat(message):
 
 
 if __name__ == '__main__':
+    signal.signal(signal.SIGINT, lambda signum, frame: sys.exit(1))
+
     reminder = CleaningReminder(token, chat_id, fixed_date)
     reminder.add_remind_time('13:00', 1)
     print('Starting reminder thread...')
