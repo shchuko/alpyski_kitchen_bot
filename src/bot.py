@@ -151,17 +151,22 @@ def handle_joinchat(message):
     bot.reply_to(message, bmsg.hlp)
 
 
-def run_health_check_server(server_class=HTTPServer, handler_class=HealthCheck):
+def run_health_check_server():
     server_address = ('', 8080)
-    httpd = server_class(server_address, handler_class)
-    print('Starting httpd on port 8080...')
-    httpd.serve_forever()
+    httpd = HTTPServer(server_address, HealthCheck)
+
+    thread = threading.Thread(target=lambda : httpd.serve_forever())
+    thread.start()
 
 
 if __name__ == '__main__':
     reminder = CleaningReminder(token, chat_id, fixed_date)
     reminder.add_remind_time('13:00', 1)
+    print('Starting reminder thread...')
     reminder.polling()
 
+    print('Starting healthcheck thread...')
     run_health_check_server()
+
+    print('Starting bot.polling()')
     bot.polling()
