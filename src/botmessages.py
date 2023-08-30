@@ -15,7 +15,7 @@ For the kitchen cleaning schedule check pinned message and #cleaning hashtag
 Contribute: https://github.com/shchuko/alpyski_kitchen_bot
 '''
 
-links = '''Полезные ссылки:
+links = '''Useful links | Полезные ссылки:
  
 Dormitory VK group | Группа ВК общежития
 https://vk.com/alp15k2_itmo 
@@ -23,10 +23,10 @@ https://vk.com/alp15k2_itmo
 Dormitory Telegram channel | Телеграм-канал общежития
 https://t.me/joinchat/SHzrdnL-wPKBAIYZ 
 
-Dormitory chat / Чат общежития
+Dormitory chat | Чат общежития
 https://vk.me/join/AJQ1d3osaA3DJx_eBOUYLK52
 
-Bulletin board / Доска объявлений
+Bulletin board | Доска объявлений
 https://vk.me/join/AJQ1d5mVOw1760s0FwBsj6YB 
 '''
 
